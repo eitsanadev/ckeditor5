@@ -7,8 +7,10 @@ import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
 import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage.js';
 import AutoLink from '@ckeditor/ckeditor5-link/src/autolink.js';
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
+import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder.js';
 import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter.js';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
 import Code from '@ckeditor/ckeditor5-basic-styles/src/code.js';
@@ -25,6 +27,7 @@ import GeneralHtmlSupport from '@ckeditor/ckeditor5-html-support/src/generalhtml
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight.js';
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js';
+import HtmlComment from '@ckeditor/ckeditor5-html-support/src/htmlcomment.js';
 import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
@@ -40,7 +43,6 @@ import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
 import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties.js';
-import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
 import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
 import Mention from '@ckeditor/ckeditor5-mention/src/mention.js';
@@ -58,6 +60,8 @@ import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-character
 import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext.js';
 import StandardEditingMode from '@ckeditor/ckeditor5-restricted-editing/src/standardeditingmode.js';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough.js';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript.js';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableCaption from '@ckeditor/ckeditor5-table/src/tablecaption.js';
 import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
@@ -66,6 +70,7 @@ import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextPartLanguage from '@ckeditor/ckeditor5-language/src/textpartlanguage.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
+import Title from '@ckeditor/ckeditor5-heading/src/title.js';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
@@ -78,8 +83,10 @@ Editor.builtinPlugins = [
 	Autoformat,
 	AutoImage,
 	AutoLink,
+	Autosave,
 	BlockQuote,
 	Bold,
+	CKFinder,
 	CKFinderUploadAdapter,
 	CloudServices,
 	Code,
@@ -96,6 +103,7 @@ Editor.builtinPlugins = [
 	Heading,
 	Highlight,
 	HorizontalLine,
+	HtmlComment,
 	HtmlEmbed,
 	Image,
 	ImageCaption,
@@ -111,7 +119,6 @@ Editor.builtinPlugins = [
 	LinkImage,
 	List,
 	ListProperties,
-	Markdown,
 	MediaEmbed,
 	MediaEmbedToolbar,
 	Mention,
@@ -129,6 +136,8 @@ Editor.builtinPlugins = [
 	SpecialCharactersText,
 	StandardEditingMode,
 	Strikethrough,
+	Subscript,
+	Superscript,
 	Table,
 	TableCaption,
 	TableCellProperties,
@@ -137,6 +146,7 @@ Editor.builtinPlugins = [
 	TableToolbar,
 	TextPartLanguage,
 	TextTransformation,
+	Title,
 	TodoList,
 	Underline,
 	WordCount
@@ -163,23 +173,30 @@ Editor.defaultConfig = {
 			'mediaEmbed',
 			'undo',
 			'redo',
+			'CKFinder',
+			'superscript',
+			'textPartLanguage',
+			'todoList',
+			'underline',
 			'alignment',
 			'code',
 			'codeBlock',
-			'fontColor',
+			'findAndReplace',
 			'fontBackgroundColor',
+			'fontColor',
 			'fontFamily',
-			'highlight',
 			'fontSize',
+			'highlight',
 			'horizontalLine',
 			'htmlEmbed',
-			'removeFormat',
-			'specialCharacters',
-			'strikethrough',
-			'underline',
-			'findAndReplace',
+			'imageInsert',
 			'pageBreak',
-			'sourceEditing'
+			'removeFormat',
+			'sourceEditing',
+			'specialCharacters',
+			'restrictedEditingException',
+			'strikethrough',
+			'subscript'
 		]
 	},
 	language: 'en',
