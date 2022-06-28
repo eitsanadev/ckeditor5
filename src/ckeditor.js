@@ -42,7 +42,6 @@ import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
-import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
 import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
 import Mention from '@ckeditor/ckeditor5-mention/src/mention.js';
@@ -118,7 +117,6 @@ Editor.builtinPlugins = [
 	Link,
 	LinkImage,
 	List,
-	ListProperties,
 	MediaEmbed,
 	MediaEmbedToolbar,
 	Mention,
